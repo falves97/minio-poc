@@ -7,6 +7,7 @@ desenvolvimento local, como XDebug, e para deploy em produção com otimização
 ## Estrutura do Projeto
 
 - **Laravel**: Framework PHP para desenvolvimento web.
+- **MinIO**: Servidor de armazenamento de objetos para desenvolvimento.
 - **FrankenPHP**: Mantém o PHP atualizado com as versões mais recentes.
 - **Laravel Octane**: Otimiza a performance do Laravel.
 - **Docker**: Configurações para desenvolvimento e produção.
