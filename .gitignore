@@ -4,6 +4,7 @@
 /public/css
 /storage
 /storage/*.key
+/bootstrap/cache
 /vendor
 .env
 .phpactor.json
