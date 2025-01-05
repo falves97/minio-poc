@@ -18,7 +18,6 @@ services:
       DATABASE_DATABASE: ${DB_DATABASE:-app}
       DATABASE_USERNAME: ${DB_USERNAME:-app}
       DATABASE_PASSWORD: ${DB_PASSWORD:-!ChangeMe!}
-
     ports:
       # Node.js
       - "3000:3000"
@@ -28,6 +27,8 @@ services:
     tty: true
     depends_on:
       database:
+        condition: service_healthy
+      minio:
         condition: service_healthy
 
   database:
@@ -41,6 +42,7 @@ services:
       context: .
       dockerfile: minio/Dockerfile
     container_name: "minio"
+    restart: unless-stopped
     ports:
       - "8090:9000"
       - "9001:9001"
