@@ -16,6 +16,12 @@ class InvoiceResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-receipt-percent';
 
+    protected static ?string $recordTitleAttribute = 'date';
+
+    protected static ?string $modelLabel = 'boleto';
+
+    protected static ?string $pluralModelLabel = 'boletos';
+
     public static function form(Form $form): Form
     {
         return $form
@@ -43,6 +49,7 @@ class InvoiceResource extends Resource
                 //
             ])
             ->actions([
+                Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
@@ -65,6 +72,7 @@ class InvoiceResource extends Resource
             'index' => Pages\ListInvoices::route('/'),
             'create' => Pages\CreateInvoice::route('/create'),
             'edit' => Pages\EditInvoice::route('/{record}/edit'),
+            'view' => Pages\ViewInvoice::route('/{record}'),
         ];
     }
 }
