@@ -24,8 +24,10 @@ class InvoiceResource extends Resource
                     ->required(),
                 Forms\Components\Select::make('company_id')
                     ->relationship('company', 'name')
+                    ->columnSpan(2)
                     ->required(),
-            ]);
+            ])
+            ->columns(3);
     }
 
     public static function table(Table $table): Table
