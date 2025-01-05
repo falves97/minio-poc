@@ -15,7 +15,7 @@ class Invoice extends Model
     {
         return new Attribute(
             get: fn ($value) => Carbon::parse($value)->format('d/m/Y'),
-            set: fn ($value) => $value->format('Y-m-d'),
+            set: fn ($value) => $value,
         );
     }
 
