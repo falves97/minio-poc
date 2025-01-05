@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Invoice extends Model
 {
     protected $fillable = ['date', 'company_id'];
+
     protected $dates = ['date'];
 
     public function company(): BelongsTo
