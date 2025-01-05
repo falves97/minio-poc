@@ -30,7 +30,7 @@ class InvoiceResource extends Resource
                     ->required(),
                 Forms\Components\Select::make('company_id')
                     ->relationship('company', 'name')
-                    ->columnSpan(2)
+                    ->columnSpan(['lg' => 2])
                     ->required(),
             ])
             ->columns(3);
