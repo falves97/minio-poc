@@ -30,7 +30,9 @@ class InvoiceResource extends Resource
                     ->required(),
                 Forms\Components\Select::make('company_id')
                     ->relationship('company', 'name')
-                    ->columnSpan(['lg' => 2])
+                    ->required(),
+                Forms\Components\Select::make('user_id')
+                    ->relationship('user', 'name')
                     ->required(),
             ])
             ->columns(3);
@@ -41,9 +43,12 @@ class InvoiceResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('date')
-                    ->date('d/m/Y'),
+                    ->date('d/m/Y')
+                    ->label('Data'),
                 Tables\Columns\TextColumn::make('company.name')
-                    ->label('Company'),
+                    ->label('Empresa'),
+                Tables\Columns\TextColumn::make('user.name')
+                    ->label('Usuário'),
             ])
             ->filters([
                 //
