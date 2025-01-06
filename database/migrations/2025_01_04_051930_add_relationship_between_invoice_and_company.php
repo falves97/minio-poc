@@ -25,8 +25,7 @@ return new class extends Migration
     {
         if (Schema::hasTable('invoices')) {
             Schema::table('invoices', function (Blueprint $table) {
-                $table->dropForeign(['company_id']);
-                $table->dropColumn('company_id');
+                $table->dropConstrainedForeignId('company_id');
             });
         }
     }

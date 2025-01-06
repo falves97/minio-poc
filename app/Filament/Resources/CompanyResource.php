@@ -27,6 +27,7 @@ class CompanyResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('name')
+                    ->label('Nome')
                     ->required()
                     ->maxLength(255),
             ]);
@@ -36,7 +37,8 @@ class CompanyResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name'),
+                Tables\Columns\TextColumn::make('name')
+                    ->label('Nome'),
             ])
             ->filters([
                 //
