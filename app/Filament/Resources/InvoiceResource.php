@@ -56,6 +56,11 @@ class InvoiceResource extends Resource
             ->actions([
                 Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\Action::make('seePdf')
+                    ->label('Ver PDF')
+                    ->icon('heroicon-o-document')
+                    ->disabled(fn ($record) => ! $record->filepath)
+                    ->url(fn ($record) => route('invoices.pdf', $record), true),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
