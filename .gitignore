@@ -4,9 +4,7 @@
 /public/hot
 /public/js
 /public/css
-/storage
 /storage/*.key
-/bootstrap/cache
 /vendor
 .env
 .phpactor.json
