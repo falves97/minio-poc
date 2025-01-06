@@ -1,10 +1,10 @@
 /.phpunit.cache
 /node_modules
+/public/build
+/public/hot
 /public/js
 /public/css
-/storage
 /storage/*.key
-/bootstrap/cache
 /vendor
 .env
 .phpactor.json
@@ -18,4 +18,5 @@ yarn-error.log
 /.idea
 /.vscode
 .env.*
+!.env.example
 
